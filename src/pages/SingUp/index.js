@@ -4,10 +4,10 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
 import api from "../../services/api";
+import Logo from "../../assets/Logo.png";
 
 
-
-import { Form, Container } from "./styles";
+import { Form, Container,ContainerFooter } from "./styles";
 
 class SignUp extends Component {
   state = {
@@ -38,7 +38,7 @@ class SignUp extends Component {
     return (
       <Container>
         <Form onSubmit={this.handleSignUp}>
-         
+        <img src={Logo} alt="Github logo" />
           {this.state.error && <p>{this.state.error}</p>}
           <input
             type="text"
@@ -55,11 +55,15 @@ class SignUp extends Component {
             placeholder="Senha"
             onChange={e => this.setState({ password: e.target.value })}
           />
-          <button type="submit">Cadastrar grátis</button>
+          <button type="submit">Cadastrar</button>
           <hr />
           <Link to="/">Fazer login</Link>
         </Form>
+        <ContainerFooter>
+        <footer>Feito com ❤ por Luiz Gabriel de Almeida </footer>
+      </ContainerFooter>
       </Container>
+      
     );
   }
 }

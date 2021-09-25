@@ -26,9 +26,10 @@ class SignUp extends Component {
       try {
         await api.post("/users", { username, email, password });
         this.props.history.push("/");
+        alert('Cadastro efetuado com sucesso.')
       } catch (err) {
         console.log(err);
-        this.setState({ error: "Ocorreu um erro ao registrar sua conta. T.T" });
+        this.setState({ error: "Ocorreu um erro ao registrar sua conta. Você já possui cadastro?" });
       }
     }
   };

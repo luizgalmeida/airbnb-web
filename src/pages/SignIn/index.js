@@ -27,7 +27,7 @@ class SignIn extends Component {
       } catch (err) {
         this.setState({
           error:
-            "Usuário ou senha inválidos"
+            "Usuário/senha inválidos ou não cadastrados"
         });
       }
     }
